@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sanji ❤️</title>
+
+<style>
+body{
+background:black;
+color:#00ffcc;
+font-family:monospace;
+text-align:center;
+margin-top:100px;
+overflow:hidden;
+}
+
+#text{
+font-size:20px;
+width:85%;
+margin:auto;
+white-space:pre-line;
+}
+
+.heart{
+position:fixed;
+color:red;
+font-size:24px;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh);}
+100%{transform:translateY(110vh);}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Sanji ❤️</h1>
+<div id="text"></div>
+
+<script>
+
+var message = "Sanji...\n\nJani na kokhon theke tomake eto special mone hoy.\nTumi jokhon kotha bolo amar mon ta onek happy hoy.\n\nAmi onek chesta korechilam ignore korte...\nKintu amar moner code bar bar ekta result dei...\n\nSanji = amar smile ❤️\n\nTai ajke ekta choto program diye bolchi...\n\nSanji, tumi ki amar life er special manus hobe?";
+
+var i = 0;
+
+function typing(){
+if(i < message.length){
+document.getElementById("text").innerHTML += message.charAt(i);
+i++;
+setTimeout(typing,50);
+}
+}
+
+typing();
+
+function createHeart(){
+var heart = document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+document.body.appendChild(heart);
+
+setTimeout(function(){
+heart.remove();
+},5000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
